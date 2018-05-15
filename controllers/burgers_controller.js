@@ -9,6 +9,9 @@ router.get('/', function(req,res) {
 
 router.get('/burgers', function(req, res){
     burger.all(function (data){ 
-        var hbsObject = {}
-    })
+        var hbsObject = { burgers:data}
+        res.render ('index', hbsObject);
+    });
 });
+
+router.put('/')
