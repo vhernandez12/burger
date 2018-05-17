@@ -9,16 +9,20 @@ function objToSql(ob) {
             arr.push(key + '=' + ob[key]);
         }
     }
-    
+
     return arr.toString();
 }
 
 var orm = {
-    selectAll: function(table, cb) {
+    selectAll: function (table, cb) {
         var queryString = 'SELECT * FROM' + table + ';';
-        connection.query(queryString, function(err, result) {
+        connection.query(queryString, function (err, result) {
             if (err) throw err;
             cb(result);
-        });
+
+        })
+    }, 
+    insertOne: function (table, burger_name, cb) {
+        var queryString = "INSERT INTO" + table + " (burger_name)"
     }
 }
